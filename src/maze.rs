@@ -56,7 +56,6 @@ impl Maze {
         (east, south)
     }
 
-
     fn try_wall(&mut self, mut dsets: &mut DisjointSets, index: usize, is_east: bool) {
         let step = match self.coordinates(index) {
             (x, _) if is_east && (self.width > 1 && x < self.width - 2) => { 1 },
