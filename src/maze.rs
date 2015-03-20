@@ -78,16 +78,18 @@ impl Maze {
 
 impl Display for Maze {
     fn fmt(&self, f: &mut Formatter) -> fmt::Result {
-        for _ in 0..(self.width + 1) { let _ = write!(f, "X"); }
+        let mut s = String::new();
+        for _ in 0..(self.width + 1) { s.push('X'); }
         for y in 0..self.height {
-            let _ = write!(f, "X\nX");
+            s.push('X');s.push('\n');s.push('X');
             for x in 0..self.width {
-                let _ = write!(f, "{}", if self.walls[x + y * self.width] { "X" } else { " " });
+                s.push(if self.walls[x + y * self.width] { 'X' } else { ' ' });
             }
         }
-        let _ = write!(f, "X\nX");
-        for _ in 0..(self.width + 1) { let _ = write!(f, "X"); }
-        write!(f, "\n")
+        s.push('X');s.push('\n');s.push('X');
+        for _ in 0..(self.width + 1) { s.push('X'); }
+
+        write!(f, "{}\n", s)
     }
 }
 
