@@ -2,6 +2,6 @@ mod maze;
 use maze::Maze;
 
 fn main() {
-    let maze = Maze::new(5,5);
+    let maze = Maze::new(99,49);
     println!("{}", maze);
 }

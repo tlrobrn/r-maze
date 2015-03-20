@@ -39,7 +39,7 @@ impl Maze {
 
         for y in 0..self.height {
             for x in 0..self.width {
-                let i = x + y * self.height;
+                let i = x + y * self.width;
                 let is_wall = (x % 2) == 1 || (y % 2) == 1;
 
                 self.walls[i] = is_wall;
