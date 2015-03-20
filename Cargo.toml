@@ -1,0 +1,10 @@
+[package]
+name = "r-maze"
+version = "0.0.1"
+authors = ["Taylor O'Brien <obrien.taylorm@gmail.com>"]
+
+[dependencies.disjoint_sets]
+git = "https://github.com/tlrobrn/r-dsets"
+
+[dependencies.rand]
+rand = "^0.2.0"

@@ -1,0 +1,32 @@
+[root]
+name = "r-maze"
+version = "0.0.1"
+dependencies = [
+ "disjoint_sets 0.0.1 (git+https://github.com/tlrobrn/r-dsets)",
+ "rand 0.2.0 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[[package]]
+name = "disjoint_sets"
+version = "0.0.1"
+source = "git+https://github.com/tlrobrn/r-dsets#9ab9c7ed133d20f557ad1b733ce11b11df120629"
+
+[[package]]
+name = "libc"
+version = "0.1.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+
+[[package]]
+name = "log"
+version = "0.2.5"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+
+[[package]]
+name = "rand"
+version = "0.2.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+dependencies = [
+ "libc 0.1.3 (registry+https://github.com/rust-lang/crates.io-index)",
+ "log 0.2.5 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
