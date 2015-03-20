@@ -21,7 +21,6 @@ impl Maze {
             walls: vec![false; size],
         };
 
-
         let mut dsets = DisjointSets::new(size);
         let (east, south) = maze.initialize_walls();
 
