@@ -2,10 +2,16 @@
 
 Randomly generates acyclic 2D mazes.
 
+## Build
+
+```
+$ cargo build --release
+```
+
 ## Usage
 
 ```
-$ r-maze WIDTH HEIGHT
+$ target/release/r-maze WIDTH HEIGHT
 ```
 
 Default `WIDTH` and `HEIGHT` are 5.
