@@ -1,3 +1,4 @@
+#![feature(core)]
 mod maze;
 use maze::Maze;
 use std::env;

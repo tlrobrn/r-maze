@@ -13,11 +13,13 @@ pub struct Maze {
 
 impl Maze {
     pub fn new(width: usize, height: usize) -> Maze {
-        let size = width * height;
+        let width_with_walls = 2 * width - 1;
+        let height_with_walls = 2 * height - 1;
+        let size = width_with_walls * height_with_walls;
 
         let mut maze = Maze {
-            width: width,
-            height: height,
+            width: width_with_walls,
+            height: height_with_walls,
             walls: vec![false; size],
         };
 
@@ -30,6 +32,10 @@ impl Maze {
         }
 
         maze
+    }
+
+    pub fn size(&self) -> (usize, usize) {
+        ((self.width + 1) / 2, (self.height + 1) / 2)
     }
 
     fn initialize_walls(&mut self) -> (Vec<usize>, Vec<usize>) {
@@ -88,7 +94,8 @@ impl Display for Maze {
         s.push('X');s.push('\n');s.push('X');
         for _ in 0..(self.width + 1) { s.push('X'); }
 
-        write!(f, "{}\n", s)
+        let (width, height) = self.size();
+        write!(f, "{}x{} Maze:\n{}\n", width, height, s)
     }
 }
 
